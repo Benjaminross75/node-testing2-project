@@ -17,7 +17,17 @@ server.get("/hobbits", (req, res) => {
         res.status(500).json(error);
       });
   });
+  server.post("/hobbits", async (req, res) => {
+    const newHobbit = await Hobbits.insert(req.body);
+    res.json(newHobbit);
+  });
 
+  server.delete("/hobbits/:id", async (req, res) => {
+    const id = req.params.id
+    const deletedHobbit = await Hobbits.remove(id)
+    res.status(200).json(deletedHobbit)
+
+  });
 
 server.use((err, req, res, next)=>{
     res.status(500).json({

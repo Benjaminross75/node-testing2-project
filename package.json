@@ -8,9 +8,10 @@
     "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
-    "test": "cross-env NODE_ENV=testing jest --verbose --watchAll --runInBand",
+    "test": " cross-env NODE_ENV=testing jest --verbose --watchAll --runInBand",
     "resetdb": "npm run rollback && npm run migrate && npm run seed"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bloominstituteoftechnology/node-testing2-project.git"
